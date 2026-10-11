@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishini Gunathilaka | E-Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5fa;
+            color: #222;
+            line-height: 1.7;
+        }
+        header {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #d9e8f5;
+        }
+        nav {
+            background: #1769aa;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+        h2 {
+            color: #1769aa;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2eaf2;
+            padding-bottom: 6px;
+        }
+        .profile {
+            text-align: center;
+        }
+        .profile img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #1769aa;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        .button {
+            display: inline-block;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            margin: 8px 5px 0 0;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background: #102a43;
+        }
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 25px;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+            section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ishini Gunathilaka</h1>
+        <p>Student | E-Portfolio</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="profile">
+            <img src="./photo%20of%20mine.jpg"
+                 alt="Ishini Gunathilaka">
+            <h2>Welcome to My E-Portfolio</h2>
+            <p>Hello! Welcome to my personal e-portfolio.
+               This website introduces my education, skills,
+               interests and activities.</p>
+            <a class="button"
+               href="./Ishini_Gunathilaka_CV%20%284%29.pdf"
+               target="_blank"
+               rel="noopener">
+                View My CV
+            </a>
+            <a class="button"
+               href="./Ishini_Gunathilaka_CV%20%284%29.pdf"
+               download="Ishini_Gunathilaka_CV.pdf">
+                Download My CV
+            </a>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>My name is Ishini Gunathilaka. I am a student
+               who is interested in learning new technologies,
+               improving my knowledge and developing new skills.</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>I am currently pursuing my studies and developing
+               my knowledge in computing and information technology.</p>
+        </section>
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Basic Computer Skills</li>
+                <li>Basic Programming Knowledge</li>
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Willingness to Learn</li>
+            </ul>
+        </section>
+        <section id="activities">
+            <h2>Interests and Activities</h2>
+            <ul>
+                <li>Learning about new technologies</li>
+                <li>Developing computer skills</li>
+                <li>Working on academic projects</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can view my CV using the button above.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2026 Ishini Gunathilaka | E-Portfolio</p>
+    </footer>
+</body>
+</html>
