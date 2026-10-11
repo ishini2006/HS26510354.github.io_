@@ -3,180 +3,903 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishini Gunathilaka | E-Portfolio</title>
+    <title>Ishini Gunathilaka | Biotechnology Portfolio</title>
+    <meta name="description"
+          content="The personal portfolio of Ishini Gunathilaka, a Biotechnology undergraduate.">
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --navy: #102a43;
+            --teal: #159a91;
+            --light: #f3f8fa;
+            --white: #ffffff;
+            --text: #334e68;
+            --muted: #627d98;
         }
         body {
-            font-family: Arial, sans-serif;
-            background: #f2f5fa;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
             line-height: 1.7;
         }
-        header {
-            background: #102a43;
-            color: white;
-            text-align: center;
-            padding: 35px 15px;
+        a {
+            text-decoration: none;
         }
-        header h1 {
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+        /* NAVIGATION */
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 3px 18px rgba(16, 42, 67, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: var(--navy);
+        }
+        .logo span {
+            color: var(--teal);
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #e7f5f4, #f3f8fa 60%, #e5edf8);
+            padding: 90px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 55px;
+        }
+        .small-heading {
+            color: var(--teal);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+        .hero h1 span {
+            color: var(--teal);
+        }
+        .hero h2 {
+            font-size: 23px;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        .hero p {
+            max-width: 600px;
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #117b75;
+            transform: translateY(-3px);
+        }
+        .btn-outline {
+            border: 2px solid var(--navy);
+            color: var(--navy);
+        }
+        .btn-outline:hover {
+            background: var(--navy);
+            color: white;
+        }
+        .profile-frame {
+            background: white;
+            padding: 13px;
+            border-radius: 28px;
+            box-shadow: 0 18px 45px rgba(16, 42, 67, 0.16);
+            max-width: 340px;
+            width: 100%;
+            margin: auto;
+            transform: rotate(2deg);
+        }
+        .profile-frame img {
+            display: block;
+            width: 100%;
+            height: 370px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 20px;
+            background: #e4eeee;
+        }
+        .photo-caption {
+            text-align: center;
+            padding: 12px 5px 3px;
+            color: var(--navy);
+            font-weight: bold;
+        }
+        /* HIGHLIGHTS */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: -32px;
+            position: relative;
+            z-index: 2;
+        }
+        .highlight-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(16, 42, 67, 0.07);
+            text-align: center;
+        }
+        .highlight-card .icon {
             font-size: 32px;
             margin-bottom: 8px;
         }
-        header p {
-            color: #d9e8f5;
+        .highlight-card h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 5px;
         }
-        nav {
-            background: #1769aa;
-            padding: 12px;
-            text-align: center;
+        .highlight-card p {
+            font-size: 14px;
+            color: var(--muted);
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 900px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
+        /* GENERAL SECTIONS */
         section {
-            background: white;
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #00000010;
+            padding: 85px 0;
         }
-        h2 {
-            color: #1769aa;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #e2eaf2;
-            padding-bottom: 6px;
-        }
-        .profile {
+        .section-heading {
             text-align: center;
+            margin-bottom: 45px;
         }
-        .profile img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #1769aa;
+        .section-heading p {
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+        .section-heading h2 {
+            font-size: 35px;
+            color: var(--navy);
+        }
+        .section-heading h2 span {
+            color: var(--teal);
+        }
+        .section-heading .line {
+            width: 65px;
+            height: 4px;
+            background: var(--teal);
+            border-radius: 5px;
+            margin: 14px auto 0;
+        }
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+        .about-card {
+            background: white;
+            padding: 32px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(16, 42, 67, 0.06);
+        }
+        .about-card h3 {
+            color: var(--navy);
+            font-size: 22px;
             margin-bottom: 15px;
         }
-        ul {
-            padding-left: 22px;
+        .about-card p {
+            margin-bottom: 12px;
         }
-        .button {
-            display: inline-block;
-            background: #1769aa;
-            color: white;
-            text-decoration: none;
-            padding: 11px 18px;
-            margin: 8px 5px 0 0;
-            border-radius: 6px;
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e6edf2;
+        }
+        .info-list strong {
+            color: var(--navy);
+        }
+        /* EDUCATION */
+        #education {
+            background: white;
+        }
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .education-card {
+            border: 1px solid #e0e9ef;
+            border-left: 5px solid var(--teal);
+            border-radius: 13px;
+            padding: 27px;
+            background: #fbfdfe;
+            transition: 0.3s;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 42, 67, 0.08);
+        }
+        .education-card .edu-icon {
+            font-size: 29px;
+        }
+        .education-card h3 {
+            color: var(--navy);
+            margin: 10px 0;
+            font-size: 20px;
+        }
+        .education-card .institution {
+            color: var(--teal);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        .skill-card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid #e5edf2;
+            transition: 0.3s;
+        }
+        .skill-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+        .skill-card .skill-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .skill-card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .tag {
+            background: #e5f5f3;
+            color: #126c67;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: bold;
         }
-        .button:hover {
-            background: #102a43;
+        /* ACTIVITIES & LANGUAGES */
+        #activities {
+            background: white;
         }
-        footer {
-            background: #102a43;
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .content-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .content-card h3 {
+            color: var(--navy);
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin: 16px 0;
+        }
+        .activity-item .emoji {
+            font-size: 25px;
+        }
+        .activity-item strong {
+            color: var(--navy);
+        }
+        .language-item {
+            margin: 20px 0;
+        }
+        .language-item strong {
+            color: var(--navy);
+        }
+        .language-bar {
+            height: 8px;
+            background: #dce7ec;
+            border-radius: 10px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .language-fill {
+            height: 100%;
+            background: var(--teal);
+            border-radius: 10px;
+        }
+        /* CONTACT */
+        .contact-section {
+            background: linear-gradient(135deg, #102a43, #174d63);
             color: white;
-            text-align: center;
-            padding: 18px;
-            margin-top: 25px;
         }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 25px;
+        .contact-section .section-heading h2 {
+            color: white;
+        }
+        .contact-section .section-heading h2 span {
+            color: #61d4c8;
+        }
+        .contact-section .section-heading p {
+            color: #83e1d8;
+        }
+        .contact-section .section-heading .line {
+            background: #61d4c8;
+        }
+        .contact-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: -20px auto 35px;
+            color: #d5e5ee;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 25px 15px;
+            border-radius: 15px;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+        .contact-card .contact-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+        .contact-card h3 {
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+        .contact-card a,
+        .contact-card p {
+            color: #d5e5ee;
+            font-size: 14px;
+        }
+        .contact-card a:hover {
+            color: #83e1d8;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 35px;
+        }
+        .contact-buttons .btn-outline {
+            color: white;
+            border-color: white;
+        }
+        .contact-buttons .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+        /* FOOTER */
+        footer {
+            background: #0b1f33;
+            text-align: center;
+            color: #c5d5e3;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+        footer span {
+            color: #61d4c8;
+        }
+        .back-top {
+            display: inline-block;
+            margin-top: 10px;
+            color: #83e1d8;
+        }
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 800px) {
+            nav {
+                padding: 16px 0;
+                flex-direction: column;
             }
-            nav a {
-                display: inline-block;
-                margin: 5px 8px;
+            .nav-links {
+                justify-content: center;
+                gap: 14px;
+            }
+            .hero {
+                padding: 60px 0;
+            }
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 35px;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .buttons {
+                justify-content: center;
+            }
+            .profile-frame {
+                max-width: 290px;
+            }
+            .profile-frame img {
+                height: 320px;
+            }
+            .highlights {
+                grid-template-columns: 1fr;
+                margin-top: 25px;
+            }
+            .about-grid,
+            .education-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 92%;
+            }
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 12px;
             }
             section {
-                padding: 18px;
+                padding: 60px 0;
+            }
+            .section-heading h2 {
+                font-size: 28px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-card,
+            .content-card {
+                padding: 23px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Ishini Gunathilaka</h1>
-        <p>Student | E-Portfolio</p>
+    <!-- NAVIGATION -->
+    <header id="home">
+        <nav class="container">
+            <a href="#home" class="logo">ISHINI<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#activities">Activities</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section class="profile">
-            <img src="./photo%20of%20mine.jpg"
-                 alt="Ishini Gunathilaka">
-            <h2>Welcome to My E-Portfolio</h2>
-            <p>Hello! Welcome to my personal e-portfolio.
-               This website introduces my education, skills,
-               interests and activities.</p>
-            <a class="button"
-               href="./Ishini_Gunathilaka_CV%20%284%29.pdf"
-               target="_blank"
-               rel="noopener">
-                View My CV
-            </a>
-            <a class="button"
-               href="./Ishini_Gunathilaka_CV%20%284%29.pdf"
-               download="Ishini_Gunathilaka_CV.pdf">
-                Download My CV
-            </a>
+    <!-- HERO -->
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div>
+                    <p class="small-heading">Welcome to my portfolio</p>
+                    <h1>Hello, I'm <span>Ishini<br>Gunathilaka</span></h1>
+                    <h2>Biotechnology Undergraduate</h2>
+                    <p>
+                        I am a first-year Biotechnology undergraduate with an
+                        interest in laboratory science, molecular biology and
+                        scientific research. I am eager to learn new techniques,
+                        develop my practical skills and gain valuable experience.
+                    </p>
+                    <div class="buttons">
+                        <a href="#about" class="btn btn-primary">
+                            Explore My Portfolio →
+                        </a>
+                        <a href="Ishini_Gunathilaka_CV%20%284%29.pdf"
+                           class="btn btn-outline"
+                           target="_blank">
+                            View My CV ↗️
+                        </a>
+                    </div>
+                </div>
+                <div class="profile-frame">
+                    <img src="photo%20of%20mine.jpg"
+                         alt="Ishini Gunathilaka"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; text-align:center; padding:80px 10px; color:#102a43;">
+                        <div style="font-size:60px;">👩‍🔬</div>
+                        <strong>Add your photo file</strong>
+                        <p style="font-size:13px;">photo of mine.jpg</p>
+                    </div>
+                    <div class="photo-caption">
+                        <span>🧬</span> Learning • Exploring • Growing
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- HIGHLIGHTS -->
+        <div class="container highlights">
+            <div class="highlight-card">
+                <div class="icon">🎓</div>
+                <h3>Biotechnology Student</h3>
+                <p>Building a foundation in biotechnology and life sciences.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🔬</div>
+                <h3>Laboratory Skills</h3>
+                <p>Learning laboratory techniques and safe working practices.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🌱</div>
+                <h3>Continuous Learning</h3>
+                <p>Developing knowledge, teamwork and problem-solving skills.</p>
+            </div>
+        </div>
+        <!-- ABOUT -->
         <section id="about">
-            <h2>About Me</h2>
-            <p>My name is Ishini Gunathilaka. I am a student
-               who is interested in learning new technologies,
-               improving my knowledge and developing new skills.</p>
+            <div class="container">
+                <div class="section-heading">
+                    <p>Get to know me</p>
+                    <h2>About <span>Me</span></h2>
+                    <div class="line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Who Am I?</h3>
+                        <p>
+                            I am Ishini Gunathilaka, a first-year
+                            Biotechnology undergraduate at the Sri Lanka
+                            Institute of Information Technology (SLIIT).
+                        </p>
+                        <p>
+                            I have a strong interest in laboratory science,
+                            molecular biology, analytical techniques and
+                            scientific learning. I hope to improve my
+                            practical knowledge and contribute positively
+                            to a professional laboratory environment.
+                        </p>
+                        <p>
+                            I value teamwork, effective communication,
+                            critical thinking and continuous personal
+                            development.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Personal Profile</h3>
+                        <ul class="info-list">
+                            <li><strong>Name:</strong> Ishini Gunathilaka</li>
+                            <li><strong>Field:</strong> Biotechnology</li>
+                            <li><strong>University:</strong> SLIIT</li>
+                            <li><strong>Current Level:</strong> Year 1</li>
+                            <li><strong>Location:</strong> Kuliyapitiya, Sri Lanka</li>
+                            <li><strong>Languages:</strong> Sinhala and English</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- EDUCATION -->
         <section id="education">
-            <h2>Education</h2>
-            <p>I am currently pursuing my studies and developing
-               my knowledge in computing and information technology.</p>
+            <div class="container">
+                <div class="section-heading">
+                    <p>My academic journey</p>
+                    <h2>Education & <span>Qualifications</span></h2>
+                    <div class="line"></div>
+                </div>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="edu-icon">🎓</div>
+                        <h3>BSc (Hons) in Biotechnology</h3>
+                        <p class="institution">
+                            Sri Lanka Institute of Information Technology
+                        </p>
+                        <p><strong>Level:</strong> Year 1, Semester 1</p>
+                        <p>
+                            Studying biotechnology and developing a
+                            foundation in scientific and laboratory concepts.
+                        </p>
+                    </div>
+                    <div class="education-card">
+                        <div class="edu-icon">📚</div>
+                        <h3>G.C.E. Advanced Level</h3>
+                        <p class="institution">2025 — Biological Science Stream</p>
+                        <p>Biology — C</p>
+                        <p>Chemistry — C</p>
+                        <p>Physics — C</p>
+                    </div>
+                    <div class="education-card">
+                        <div class="edu-icon">🏆</div>
+                        <h3>G.C.E. Ordinary Level</h3>
+                        <p class="institution">2023</p>
+                        <p>
+                            Achieved 9 A passes in the G.C.E. Ordinary
+                            Level examination.
+                        </p>
+                    </div>
+                    <div class="education-card">
+                        <div class="edu-icon">🔎</div>
+                        <h3>Future Learning</h3>
+                        <p class="institution">Professional Development</p>
+                        <p>
+                            Interested in expanding my knowledge of
+                            laboratory procedures, biotechnology and
+                            scientific research.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- SKILLS -->
         <section id="skills">
-            <h2>My Skills</h2>
-            <ul>
-                <li>Basic Computer Skills</li>
-                <li>Basic Programming Knowledge</li>
-                <li>Communication</li>
-                <li>Teamwork</li>
-                <li>Willingness to Learn</li>
-            </ul>
+            <div class="container">
+                <div class="section-heading">
+                    <p>What I can do</p>
+                    <h2>My <span>Skills</span></h2>
+                    <div class="line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🧪</div>
+                        <h3>Laboratory Skills</h3>
+                        <p>Foundational practical laboratory knowledge.</p>
+                        <div class="tag-list">
+                            <span class="tag">Micropipetting</span>
+                            <span class="tag">Spectrophotometry</span>
+                            <span class="tag">Autoclave Operation</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🛡️</div>
+                        <h3>Laboratory Safety</h3>
+                        <p>Awareness of safe laboratory working practices.</p>
+                        <div class="tag-list">
+                            <span class="tag">Lab Safety</span>
+                            <span class="tag">SOP Compliance</span>
+                            <span class="tag">Biosafety</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <h3>Computer Skills</h3>
+                        <p>Using common office applications for academic work.</p>
+                        <div class="tag-list">
+                            <span class="tag">MS Word</span>
+                            <span class="tag">MS Excel</span>
+                            <span class="tag">PowerPoint</span>
+                            <span class="tag">Data Entry</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🤝</div>
+                        <h3>Teamwork</h3>
+                        <p>Working cooperatively and sharing responsibilities.</p>
+                        <div class="tag-list">
+                            <span class="tag">Collaboration</span>
+                            <span class="tag">Communication</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🧠</div>
+                        <h3>Thinking Skills</h3>
+                        <p>Approaching tasks thoughtfully and logically.</p>
+                        <div class="tag-list">
+                            <span class="tag">Critical Thinking</span>
+                            <span class="tag">Problem Solving</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📋</div>
+                        <h3>Organization</h3>
+                        <p>Developing planning and professional skills.</p>
+                        <div class="tag-list">
+                            <span class="tag">Project Management</span>
+                            <span class="tag">Public Relations</span>
+                            <span class="tag">Formatting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- ACTIVITIES AND LANGUAGES -->
         <section id="activities">
-            <h2>Interests and Activities</h2>
-            <ul>
-                <li>Learning about new technologies</li>
-                <li>Developing computer skills</li>
-                <li>Working on academic projects</li>
-            </ul>
+            <div class="container">
+                <div class="section-heading">
+                    <p>Beyond the classroom</p>
+                    <h2>Activities & <span>Languages</span></h2>
+                    <div class="line"></div>
+                </div>
+                <div class="two-column">
+                    <div class="content-card">
+                        <h3>🌟 Activities & Interests</h3>
+                        <div class="activity-item">
+                            <span class="emoji">🧬</span>
+                            <div>
+                                <strong>University Biotechnology Club</strong>
+                                <p>
+                                    Interested in biotechnology-related
+                                    learning and university activities.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="emoji">🏓</span>
+                            <div>
+                                <strong>Carom Club</strong>
+                                <p>
+                                    Participating in recreational activities
+                                    and developing team spirit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="emoji">📖</span>
+                            <div>
+                                <strong>Learning & Development</strong>
+                                <p>
+                                    Interested in expanding scientific
+                                    knowledge and practical skills.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card">
+                        <h3>🌐 Languages</h3>
+                        <div class="language-item">
+                            <strong>Sinhala</strong>
+                            <p>Native Language</p>
+                            <div class="language-bar">
+                                <div class="language-fill" style="width:100%"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <strong>English</strong>
+                            <p>Professional Working Proficiency</p>
+                            <div class="language-bar">
+                                <div class="language-fill" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <p style="font-size:13px; color:#627d98; margin-top:15px;">
+                            Language descriptions are based on the
+                            information provided in my CV.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can view my CV using the button above.</p>
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p>Let's connect</p>
+                    <h2>Contact <span>Me</span></h2>
+                    <div class="line"></div>
+                </div>
+                <p class="contact-intro">
+                    Thank you for visiting my portfolio. Feel free to
+                    contact me regarding academic opportunities,
+                    biotechnology and professional learning.
+                </p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Address</h3>
+                        <a href="mailto:ishinigunathilaka2006@gmail.com">
+                            ishinigunathilaka2006@gmail.com
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone Number</h3>
+                        <a href="tel:+94767766930">
+                            +94 76 776 6930
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Kuliyapitiya, Sri Lanka</p>
+                    </div>
+                </div>
+                <div class="contact-buttons">
+                    <a href="mailto:ishinigunathilaka2006@gmail.com"
+                       class="btn btn-primary">
+                        ✉ Send Me an Email
+                    </a>
+                    <a href="Ishini_Gunathilaka_CV%20%284%29.pdf"
+                       class="btn btn-outline"
+                       target="_blank">
+                        📄 Open My CV
+                    </a>
+                    <a href="https://github.com/hs26510354"
+                       class="btn btn-outline"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        💻 My GitHub
+                    </a>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Ishini Gunathilaka | E-Portfolio</p>
+        <p>
+            ©️ 2026 <span>Ishini Gunathilaka</span> |
+            Biotechnology Undergraduate Portfolio
+        </p>
+        <a href="#home" class="back-top">↑ Back to Top</a>
     </footer>
 </body>
 </html>
